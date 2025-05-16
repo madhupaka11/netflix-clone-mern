@@ -17,7 +17,11 @@ const app = express();
 
 
 // Allow all origins
-app.use(cors());
+app.use(cors({
+  origin: 'https://netflix-clone-mern-lilac.vercel.app',
+  credentials: true // if you're using cookies or sessions
+}));
+
 
 app.use(express.json())
 app.use(cookieParser())
