@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-
+import cors from 'cors' ; 
 import authRoutes from "./routes/auth.routes.js";
 import movieRoutes from "./routes/movie.routes.js";
 import tvRoutes from "./routes/tv.routes.js";
@@ -14,6 +14,10 @@ import { protectRoute } from "./middlewares/protectRoutes.js";
 dotenv.config();
 
 const app = express();
+
+
+// Allow all origins
+app.use(cors());
 
 app.use(express.json())
 app.use(cookieParser())
